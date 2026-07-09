@@ -22,6 +22,18 @@ variable "subnet-public-2" {
   default = ""
 }
 
+variable "subnet-private-1" {
+  type = string
+  description = "CIDR value for private subnet 1"
+  default = ""
+}
+
+variable "subnet-private-2" {
+  type = string
+  description = "CIDR value for private subnet 2"
+  default = ""
+}
+
 variable "tag-public-1" {
   type = string
   description = "Tag value for public subnet 1"
@@ -31,6 +43,18 @@ variable "tag-public-1" {
 variable "tag-public-2" {
   type = string
   description = "Tag value for public subnet 2"
+  default = ""
+}
+
+variable "tag-private-1" {
+  type = string
+  description = "Tag value for private subnet 1"
+  default = ""
+}
+
+variable "tag-private-2" {
+  type = string
+  description = "Tag value for private subnet 2"
   default = ""
 }
 
