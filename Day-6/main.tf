@@ -18,3 +18,11 @@ resource "aws_vpc" "app_vpc" {
     Name = "Dev"
   }
 }
+
+resource "aws_subnet" "application_subnet" {
+  vpc_id                  = aws_vpc.app_vpc.id
+  cidr_block              = var.subnet_cidr
+  tags = {
+    Name = var.subnet_name
+  }
+}
