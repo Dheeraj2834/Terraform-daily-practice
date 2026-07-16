@@ -1,3 +1,7 @@
+variable "lambda_bucket_name" {
+  default = "dheerajdheeraj"
+}
+
 variable "lambda_role_name" {
   default = "demo-lambda-role"
 }
