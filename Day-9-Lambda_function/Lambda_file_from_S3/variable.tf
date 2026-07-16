@@ -3,11 +3,11 @@ variable "lambda_bucket_name" {
 }
 
 variable "lambda_role_name" {
-  default = "demo-lambda-role"
+  default = "demo-lambda-rolee"
 }
 
 variable "demo_lambda_name" {
-  default = "demo-lambda"
+  default = "demo-lambdae"
 }
 
 variable "lambda_file_name" {
@@ -19,7 +19,7 @@ variable "lambda_runtime" {
 }
 
 variable "lambda_schedule_name" {
-  default = "lambda_schedule_rule"
+  default = "lambda_schedule_rulee"
 }
 
 variable "schedule_expression" {
