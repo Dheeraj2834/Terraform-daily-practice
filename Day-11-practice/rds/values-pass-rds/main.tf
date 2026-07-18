@@ -1,0 +1,23 @@
+module "dev" {
+  source = "../"
+
+vpc_cidr = "10.0.0.0/16"
+vpc_name = "Terraform-VPC"
+az_1 = "us-east-1a"
+az_2 = "us-east-1b"
+public_subnet_1_cidr = "10.0.1.0/24"
+public_subnet_2_cidr = "10.0.2.0/24"
+public_subnet_1_name = "Public-Subnet-1-1a"
+public_subnet_2_name = "Public-Subnet-2-1b"
+sg_name = "Web-sg"
+db_identifier     = "mysql-db"
+  db_name           = "mydb"
+  db_username       = "admin"
+  db_password       = "Cloud123"
+  engine_version    = "8.0"
+  instance_class    = "db.t3.micro"
+  allocated_storage = "20"
+  db_subnet_group = "mysql-subnet-group"
+db_subnet_group_name = "DB-Subnet-Group"
+rds_name = "Terraform-RDS"  
+}
