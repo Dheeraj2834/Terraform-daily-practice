@@ -90,3 +90,5 @@ variable "tg_name" {}
 
 variable "alb_name" {}
 
+variable "domain_name" {}
+
