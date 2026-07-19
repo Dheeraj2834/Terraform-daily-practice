@@ -194,6 +194,8 @@ resource "aws_instance" "frontend_ec2" {
   subnet_id              = aws_subnet.private1.id
   vpc_security_group_ids = [aws_security_group.web_sg.id]
 
+  user_data = file("C:/Terraform-practice/Terraform-daily-practice/Day-12-load-balancer/pass-values-to-VPC/userdata.sh")
+
   tags = {
     Name = var.frontend_ec2_name
   }
