@@ -81,3 +81,37 @@ resource "aws_instance" "new_instance" {
 resource "aws_s3_bucket" "my_bucket" {
   bucket = "dheerajdheeraj"
 }
+
+# created new subnet via console and crerating new instance using thst subnet
+
+data "aws_subnet" "manual" {
+  filter {
+    name = "tag:Name"
+    values = ["subnet-2"]
+  }
+  vpc_id = aws_vpc.main.id
+}
+
+resource "aws_instance" "manual_instance" {
+  ami           = "ami-0b826bb6d96d2afe4"
+  instance_type = "t3.micro"
+  subnet_id                   = data.aws_subnet.manual.id
+  vpc_security_group_ids      = [aws_security_group.web_sg.id]
+
+  tags = {
+    Name = "third-instance"
+  }
+}
+
+# utilising existing S3 bucket and enabled the versioning
+
+data "aws_s3_bucket" "manual_s3" {
+  bucket = "dheerajbandarudheeraj"
+}
+
+resource "aws_s3_bucket_versioning" "name" {
+  bucket = data.aws_s3_bucket.manual_s3.id
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
