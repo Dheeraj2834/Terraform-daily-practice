@@ -277,18 +277,18 @@ resource "aws_lb_listener" "http" {
   }
 }
 
-# resource "aws_route53_zone" "dheetech" {
-#   name = var.domain_name
-# }
+resource "aws_route53_zone" "dheetech" {
+  name = var.domain_name
+}
 
-# resource "aws_route53_record" "alb_dns" {
-#   zone_id = aws_route53_zone.dheetech.zone_id
-#   name    = "app.dheetech.xyz"
-#   type    = "A"
+resource "aws_route53_record" "alb_dns" {
+  zone_id = aws_route53_zone.dheetech.zone_id
+  name    = "app.dheetech.xyz"
+  type    = "A"
 
-#   alias {
-#     name                   = aws_lb.alb.dns_name
-#     zone_id                = aws_lb.alb.zone_id
-#     evaluate_target_health = true
-#   }
-# }
+  alias {
+    name                   = aws_lb.alb.dns_name
+    zone_id                = aws_lb.alb.zone_id
+    evaluate_target_health = true
+  }
+}

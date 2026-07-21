@@ -1,0 +1,9 @@
+variable "vpc_cidr" {}
+variable "vpc_name" {}
+variable "public_subnet_1_cidr" {}
+variable "az-1" {}
+variable "public_subnet_1_name" {}
+variable "ami" {}
+variable "instance_type" {}
+variable "sg_name" {}
+variable "public_ec2_name" {}
